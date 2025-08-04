@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "5i $(echo "$NUM1" | tr "$WATER" '01234') 4i $(echo "$NUM2" | tr "$STIR" '0123') + 8o p" | dc | cut -d. -f1 | xargs -I{} echo "8o {} p" | dc | tr '01234567' "$BESTCHOL"
+echo $(dc -e "8 o $(( $((5#$(tr 'water' '01234' <<< "$WATER"))) + $((4#$(tr 'stir' '0123' <<< "$STIR"))) )) p") | tr '01234567' 'bestchol'
