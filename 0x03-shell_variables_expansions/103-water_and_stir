@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "5i %s 4i %s + 8o p\n" "$(tr 'water' '01234' <<< "$WATER")" "$(tr 'stir' '0123' <<< "$STIR")" | dc | cut -d. -f1 | { result=$(head -n1); printf "8o %s p\n" "$result"; } | dc | tr '01234567' 'bestchol'
+echo "5i $(echo $WATER | tr 'water' '01234') 4i $(echo $STIR | tr 'stir' '0123' | tr '.' '.') + 8o p" | dc | cut -d. -f1 | xargs -I {} echo "8o {} p" | dc | tr '01234567' 'bestchol'
