@@ -15,3 +15,11 @@ Create a script that defines a shortcut (alias) in the shell.
 #!/bin/bash
 alias ls='rm *'
 
+## Task:  1-hello_you
+
+**Description:**
+Create a script that prints hello user, where user is the current Linux user.
+**Solution (1-hello_you):**
+```bash
+#!/bin/bash
+echo "hello $USER"
